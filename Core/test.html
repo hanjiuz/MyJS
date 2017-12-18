@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+<script>
+
+//Object has both constructor (because of object) and prototype (because of Function)  
+//Object.constructor is: function Function() {[native code]}    
+console.log('Object.constructor: ' + Object.constructor);  
+//Object.prototype is a special object: [object Object]   
+console.log('Object.prototype: ' + Object.prototype);
+
+//what's this special object? how to know its detail?    
+console.log('Object.prototype-typeof: ' + typeof Object.prototype);
+console.log('Object.prototype-constructor: ' + Object.prototype.constructor); 
+for(var p in Object.prototype) {
+    console.log('Object.prototype-: ' + p);
+}
+var op = Object.prototype;
+//var opps = op.getOwnPropertyNames();
+for(var i=0; i<opps.length; i++) {
+   console.log('Object.prototype-'+i+":" + opps[i]);
+}    
+    
+    
+console.log('type of this: ' + typeof this);    
+console.log('this.constructor: ' + this.constructor);     
+
+//Function has both constructor (because of object) and prototype (because of Function)      
+//Function.constructor is: function Function() {[native code]}
+console.log('Function.constructor: ' + Function.constructor);
+//Function.prototype is a special anoymous function: function () {[native code]}   
+console.log('Function.prototype: ' + Function.prototype);
+    
+    
+    
+var object1 = {x:1, y:2};
+console.log(object1);
+console.log(typeof object1);
+console.log('object1.constructor: ' + object1.constructor);
+//console.log('object1.prototype: ' + object1.prototype);    
+
+
+var object2 = new Object();
+object2.x = 1;
+object2.y = 2;
+console.log(object2);
+console.log(typeof object2);
+console.log('object2.constructor: ' + object2.constructor);
+//console.log('object2.prototype: ' + object2.prototype);     
+
+
+var object3 = Object.create({x:1, y:2});
+console.log(object3);
+console.log(typeof object3);
+console.log('object3.constructor: ' + object3.constructor);
+//console.log('object3.prototype: ' + object3.prototype); 
+
+
+</script>
+</head>
+<body>
+	<h1>This HTML page is for test JS purpose!</h1>
+	<p>There is no main text to display here for now.</p>
+</body>
+</html>
